@@ -1,0 +1,9 @@
+:cmock:
+    :mock_path: 'mocks'
+    :mock_prefix: 'mock_'
+    :plugins:
+        - callback
+        - expect_any_args
+        - ignore
+        - ignore_arg
+        - return_thru_ptr

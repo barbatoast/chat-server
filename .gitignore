@@ -16,6 +16,12 @@
 *.gch
 *.pch
 
+# Testing
+cmock/
+unity/
+mocks/
+results.txt
+
 # Libraries
 *.lib
 *.a
@@ -29,6 +35,8 @@
 *.dylib
 
 # Executables
+server
+bin/
 *.exe
 *.out
 *.app
