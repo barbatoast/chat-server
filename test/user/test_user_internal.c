@@ -181,7 +181,7 @@ void test_create_broadcast_msg_user_joined_pass(void) {
     os_memcpy_IgnoreArg_src();
     os_memcpy_ReturnMemThruPtr_dest(test_user_join_msg,
                                     sizeof(test_user_join_msg));
-    os_timestamp_ExpectAndReturn(0);
+    os_timestamp_ExpectAndReturn(1);
     ret = create_broadcast_msg_user_joined(&user, &msg);
 
     TEST_ASSERT_EQUAL_INT(EXIT_SUCCESS, ret);
@@ -226,7 +226,7 @@ void test_create_broadcast_msg_user_left_pass(void) {
     os_memcpy_IgnoreArg_src();
     os_memcpy_ReturnMemThruPtr_dest(test_user_left_msg,
                                     sizeof(test_user_left_msg));
-    os_timestamp_ExpectAndReturn(0);
+    os_timestamp_ExpectAndReturn(1);
     ret = create_broadcast_msg_user_left(&user, &msg);
 
     TEST_ASSERT_EQUAL_INT(EXIT_SUCCESS, ret);

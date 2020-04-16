@@ -21,6 +21,7 @@ int get_msg_registered_user(int fd, void *data) {
 int send_broadcast_msg(int fd, struct msg_broadcast *data) {
     struct msg_hdr hdr;
     struct msg_field field;
+    uint32_t timestamp;
     int ret;
     int ret_final = EXIT_FAILURE;
 
@@ -49,7 +50,8 @@ int send_broadcast_msg(int fd, struct msg_broadcast *data) {
         goto error_out_send_field_hdr_timestamp;
     }
 
-    ret = send_data(fd, &data->timestamp, sizeof(data->timestamp));
+    timestamp = htobe32(data->timestamp);
+    ret = send_data(fd, &timestamp, sizeof(timestamp));
     if (EXIT_FAILURE == ret) {
         printf("ERRO: failed to send timestamp to fd %d\n", fd);
         goto error_out_send_timestamp;
